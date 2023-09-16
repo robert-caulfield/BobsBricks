@@ -1,6 +1,6 @@
 # BobsBricks
 
-Welcome to BobsBricks, a mock LEGO website! This ASP.NET MVC project is responsible for pulling Products and Group Build information from an SQL Server database utilizing Entity Framework. The website was designed to be responsive and user-friendly, with a consistent theme made possible by Bootstrap and Bootswatch. On top of this Ajax was used to update the products page based on the user's input.
+Welcome to BobsBricks, a mock LEGO website! This ASP.NET MVC project is responsible for pulling Products and Group Build information from an SQL Server database utilizing Entity Framework. The website was designed to be responsive and user-friendly, with a consistent theme made possible by Bootstrap and Bootswatch. On top of this Ajax was used to update the products page responsively based on the user's input.
 
 # Technology Used
 - **ASP.NET MVC**: Developed dynamic webpages which are structured for scalability. 
@@ -9,7 +9,12 @@ Welcome to BobsBricks, a mock LEGO website! This ASP.NET MVC project is responsi
 - **Ajax**: Ajax is used to update the product index page dynamically given the users filter parameters.
 
 # Database Design
-For the database design I used a code first approach to create the Product and GroupBuilds table. Below is a diagram of the two tables with their attributes. 
+The database design used a code first approach to create the Product and GroupBuilds table.
+
+- **Product**: Contains product information such as name, description, and price.
+- **GroupBuild**: Contains information about group build events such as the name, start time, and the product being built.
+
+Below is a diagram of the two tables with their attributes. 
 
 <p align="center">
   <img src="https://github.com/robert-caulfield/BobsBricks/blob/master/Images/DBSchema.png" alt="Image of DB Schema Design">
@@ -23,7 +28,7 @@ For the database design I used a code first approach to create the Product and G
 Contains a navbar that allows users to quickly access all pages.
 
 ## Home Controller:
-Serves as the entry point to the website
+Serves as the entry point to the website.
 
 ### Index Page
 - Headline and Sub-headline. 
@@ -54,7 +59,7 @@ Serves as access to product information
 </p>
 
 ## Group Build Controller
-Serves as access to Group Build information
+Serves as access to Group Build information.
 ### Index
 - Displays the list of the earliest group builds based on their StartTime attribute in ascending order.
 - Does not display GroupBuilds that have already passed.
