@@ -3,7 +3,7 @@
 Welcome to BobsBricks, a mock LEGO website! This ASP.NET MVC project is responsible for pulling Products and Group Build information from an SQL Server database utilizing Entity Framework. The website was designed to be responsive and user-friendly, with a consistent theme made possible by Bootstrap and Bootswatch. On top of this Ajax was used to update the products page based on the user's input.
 
 # Technology Used
-- **ASP.NET MVC**:
+- **ASP.NET MVC**: Developed dynamic webpages which are structured for scalability. 
 - **Entity Framework**: Entity Framework is used to interact with the database. A code first design was used to create and manage the database.
 - **Bootstrap and Bootswatch**: Bootstrap is used with a Bootswatch theme to maintain a consistent design throughout all pages.
 - **Ajax**: Ajax is used to update the product index page dynamically given the users filter parameters.
@@ -11,12 +11,12 @@ Welcome to BobsBricks, a mock LEGO website! This ASP.NET MVC project is responsi
 # Database Design
 For the database design I used a code first approach to create the Product and GroupBuilds table. Below is a diagram of the two tables with their attributes. 
 
-- Primary Keys in bold
-- A \* denotes a required field 
-
 <p align="center">
   <img src="https://github.com/robert-caulfield/BobsBricks/blob/master/Images/DBSchema.png" alt="Image of DB Schema Design">
 </p>
+
+- Primary keys are bold
+- A \* denotes a required field 
 
 # Page Overviews
 
