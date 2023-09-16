@@ -1,0 +1,11 @@
+﻿
+@model List<GroupBuild>
+
+
+<h1>Group Builds</h1>
+
+@* List of Group Build Partials *@
+@foreach(GroupBuild gb in Model)
+{
+    <partial name="_GroupBuildEntry" model=@gb />
+}

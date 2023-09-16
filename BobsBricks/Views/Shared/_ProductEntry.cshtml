@@ -1,0 +1,29 @@
+﻿@model Product
+
+<link rel="stylesheet" href="~/css/EntryStyles.css" />
+
+
+<a asp-controller="Product" asp-action="Detail" asp-route-id="@Model.Id" style="text-decoration: none;">
+
+
+<div class="product-container">
+    @if (Model.ImageURL != null)
+    {
+        <img class="product-image" src="@Model.ImageURL" />
+    }
+    <h4><strong>@Model.Name</strong></h4>
+    <ul class="product-details-container">
+        <li>$@Model.Price</li>
+
+        @if(Model.PieceCount != null) {
+        <li>@Model.PieceCount Pieces</li>
+        }
+        @if (Model.MiniFigs != null && Model.MiniFigs != 0)
+        {
+            <li>@Model.MiniFigs Minifigs</li>
+        }
+       
+    </ul>
+</div>
+
+</a>

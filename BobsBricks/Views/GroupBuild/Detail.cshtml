@@ -1,0 +1,26 @@
+﻿@model GroupBuild
+
+<link rel="stylesheet" href="~/css/DetailStyles.css" />
+
+
+
+<h1>@Model.Name</h1>
+<div class="border-top text-muted"></div>
+
+
+<div class="grid-container">
+    <div class="grid-item">
+        <p>@Model.Description</p>
+    </div>
+
+    <div class="grid-item">
+        <div>
+            <h2>Start Time</h2>
+            <h4>@Model.StartTime</h4>
+        </div>
+    </div>
+</div>
+
+<h1>Product in This Build</h1>
+<div class="border-top text-muted"> </div>
+<partial name="_ProductEntry" model=@Model.Product/>

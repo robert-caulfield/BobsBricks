@@ -1,0 +1,40 @@
+﻿
+/**Styles for Product and Group build detail pages*/
+
+.grid-container {
+    padding: 10px;
+    display: grid;
+    gap: 40px;
+    grid-template-columns: 2fr 1fr;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    background-size: cover;
+}
+
+    .grid-item > ul {
+        margin-right: auto;
+        margin-left: 0;
+    }
+
+    .grid-item > * {
+        width: 100%;
+        height: 100%;
+    }
+
+.product-detail-image {
+    max-width: 300px;
+    max-height: 300px;
+    width: 100%;
+    height: auto;
+}
+
+button {
+    max-width: 400px;
+}
+
+h1 {
+    padding: 10px;
+}

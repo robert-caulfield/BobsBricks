@@ -1,0 +1,51 @@
+﻿@model ProductDetailViewModel
+
+<link rel="stylesheet" href="~/css/DetailStyles.css" />
+
+
+<h1>@Model.MainProduct.Name</h1>
+<div class="border-top text-muted" />
+<div class="grid-container">
+    <div class="grid-item">
+        <img class="product-detail-image" src="@Model.MainProduct.ImageURL" />
+    </div>
+    
+    <div class="grid-item">
+    <p>
+        <strong>Description</strong>
+        <br />
+            @Model.MainProduct.Description
+    </p>
+    </div>
+
+    
+    <div class="grid-item">
+        <button type="button" class="btn btn-primary"> Order Now</button>
+    </div>
+
+    <div class="grid-item">
+    <ul class="product-details-container">
+        <li>$@Model.MainProduct.Price</li>
+        @if (Model.MainProduct.PieceCount != null)
+        {
+            <li>@Model.MainProduct.PieceCount Pieces</li>
+        }
+        @if (Model.MainProduct.MiniFigs != null && Model.MainProduct.MiniFigs != 0)
+        {
+            <li>@Model.MainProduct.MiniFigs Minifigs</li>
+        }
+    </ul>
+    </div>
+</div>
+
+<h1>Recommended Products</h1>
+<div class="border-top text-muted" />
+
+<div class="recommended-product-container">
+
+    @foreach(Product p in Model.RecommendedProducts)
+    {
+        <partial name="_ProductEntry" model=p />
+    }
+
+</div>

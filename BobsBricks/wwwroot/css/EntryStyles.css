@@ -1,0 +1,27 @@
+﻿/*Style for Product and Group build Entries*/
+
+.product-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid;
+    margin-bottom: 10px;
+    perspective: 100px;
+    height: 120px;
+    transition: transform 1s ease;
+}
+
+.product-container:hover {
+    transform: rotateY(10deg);
+}
+
+.product-image {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+}
+
+.product-details-container {
+    margin-left: auto;
+    margin-right: 0;
+}

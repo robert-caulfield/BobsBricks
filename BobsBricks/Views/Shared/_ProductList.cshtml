@@ -1,0 +1,6 @@
+﻿@model List<Product>
+
+@foreach (Product p in Model)
+{
+    <partial name="_ProductEntry" model=p />
+}

@@ -1,0 +1,13 @@
+﻿@model GroupBuild
+
+<link rel="stylesheet" href="~/css/EntryStyles.css" />
+
+<a asp-action="Detail" asp-route-id=@Model.Id style="text-decoration: none;">
+    <div class="product-container">
+        <div>
+            <h2><strong>@Model.Name</strong></h2>
+            <h4>@Model.StartTime.ToLongDateString()</h4>
+            <h4>@Model.StartTime.ToShortTimeString()</h4>
+        </div>
+    </div>
+</a>

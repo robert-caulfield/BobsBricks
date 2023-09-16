@@ -1,0 +1,82 @@
+﻿
+@model List<Product>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .filter-div{
+        padding: 10px;
+    }
+    h4 {
+        text-align: left;
+        margin: auto;
+        padding: 5px;
+    }
+</style>
+
+<h1>Products</h1>
+
+@* Product Radio Filters *@
+<div class="filter-div">
+    @* Latest, Price, Pieces radios *@
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <h4>Sort by</h4>
+        <input type="radio" class="btn-check" name="sortradio" id="latest" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="latest">Latest</label>
+        <input type="radio" class="btn-check" name="sortradio" id="price" autocomplete="off" >
+        <label class="btn btn-outline-primary" for="price">Price</label>
+        <input type="radio" class="btn-check" name="sortradio" id="piece" autocomplete="off" >
+        <label class="btn btn-outline-primary" for="piece">Pieces</label>
+    </div>
+</div>
+<div class="filter-div">
+    @* Ascending, Descending radios *@
+    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+        <h4>Order by</h4>
+        <input type="radio" class="btn-check" name="orderradio" id="ascending" autocomplete="off" >
+        <label class="btn btn-outline-primary" for="ascending">Ascending</label>
+        <input type="radio" class="btn-check" name="orderradio" id="descending" autocomplete="off" checked>
+        <label class="btn btn-outline-primary" for="descending">Descending</label>
+    </div>
+</div>
+
+<div id="product-list">
+    @*
+    List will populate with AJAX get request
+    Populed with product entry partials
+    *@
+</div>
+
+
+@section Scripts{
+    <script>
+        // Function that makes ajax request with radio buttons
+        // as filter parameters
+        function fetchProducts() {
+            var sortBy = $('input[name=sortradio]:checked').attr('id');
+            var orderBy = $('input[name=orderradio]:checked').attr('id');
+            $.ajax({
+                url: '@Url.Action("GetProductList")',
+                method: 'GET',
+                data: { sortBy: sortBy, orderBy: orderBy },
+                success: function (result) {
+                    $('#product-list').html(result);
+                },
+                error: function () {
+                    alert('Error fetching products.');
+                }
+            });
+        }
+        $(document).ready(function () {
+            // Make initial request on page load
+            fetchProducts();
+            $('input[type=radio]').change(function () {
+                // Reload products when radio buttons change
+                fetchProducts();
+            });
+        });
+    </script>
+}
+

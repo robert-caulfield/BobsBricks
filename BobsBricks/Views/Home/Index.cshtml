@@ -1,0 +1,64 @@
+﻿@model List<Product>;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<style>
+    .center-div{
+        
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 600px;
+        margin: 50px auto;
+    }
+    .center-div > *:not(button){
+        flex: 1;
+        text-align: center;
+    }
+
+    .center-div > button{
+        margin: 10px;
+    }
+</style>
+
+
+<div style="margin: 25px;">
+    @* Headline *@
+    <div class="center-div">
+        <h1>Discover Endless Creativity with Our Extensive Collection of LEGO Sets</h1>
+    </div>
+    <div class="border-top text-muted" />
+    @* Sub-Headline *@
+    <div class="center-div">
+        <h4>Explore, Build, and Play with a World of Imagination – Unleash Your Inner Builder Today!</h4>
+    </div>
+
+    @* Redirect Buttons *@
+    <div class="center-div">
+        @using (Html.BeginForm("RedirectToProducts", "Home", FormMethod.Post))
+        {
+            <button type="submit" class="btn btn-primary btn-lg">Explore Products</button>
+        }
+        @using (Html.BeginForm("RedirectToGroupBuilds", "Home", FormMethod.Post))
+        {
+        <button type="submit" class="btn btn-primary btn-lg">Explore Group Builds</button>
+        }
+    </div>
+</div>
+
+
+@* Latest Products List *@
+<h2 style="text-align: center;">Our latest products</h2>
+<div class="border-top text-muted" style="padding-bottom: 25px;"> </div>
+
+<partial name="_ProductList" model=Model />
+
+    
+
+
+
+
